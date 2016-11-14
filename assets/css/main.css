@@ -5,15 +5,16 @@ body {
     background-size: cover;
 }
 
+
 /* === Home Section === */
 
-.home h1{
+.home h1 {
     text-align: center;
     color: #fff;
     font-size: 50px;
 }
 
-.home h2{
+.home h2 {
     color: #fff;
     font-size: 35px;
 }
@@ -31,4 +32,13 @@ body {
 
 .home tbody tr td {
     font-size: 16px;
+}
+
+
+/* === Footer === */
+
+footer p {
+    color: #fff;
+    text-align: center;
+    font-size: 20px
 }
