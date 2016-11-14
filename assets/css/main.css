@@ -1,3 +1,34 @@
-/* === Header === */
+/* === GENERAL === */
 
+body {
+    background: #050d1d url(../img/background.jpg) center center no-repeat;
+    background-size: cover;
+}
 
+/* === Home Section === */
+
+.home h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+.home h2{
+    color: #fff;
+    font-size: 35px;
+}
+
+.home thead tr {
+    color: #fff;
+    font-size: 20px;
+}
+
+.home tbody tr {
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+}
+
+.home tbody tr td {
+    font-size: 16px;
+}
