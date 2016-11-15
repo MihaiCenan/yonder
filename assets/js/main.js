@@ -44,5 +44,24 @@
              
              //append tr to tbdody
              tbody.append(tr);
-         }
+         };
+     
+     // Buttons for pause and play for carousel
+     $('#playButton').click(function () {
+        $('#yonder-carousel').carousel('cycle');
+        });
+    $('#pauseButton').click(function () {
+    $('#yonder-carousel').carousel('pause');
+        });
+     
+     
+     // Now the search can work with ENTER 
+     $(document).keypress(function(e) {
+    if(e.which == 13) {
+        searchMovie();
+    }
+     });
+     
+     //Informations on click carousel
+     
 }); 
