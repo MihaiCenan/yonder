@@ -14,6 +14,7 @@
             success : renderMovies
             });
     }
+     
     
      function renderMovies(response){
          console.log(response);
@@ -56,12 +57,56 @@
      
      
      // Now the search can work with ENTER 
-     $(document).keypress(function(e) {
+     $('#movieTitle').keypress(function(e) {
     if(e.which == 13) {
-        searchMovie();
+        if($('#movieTitle').val()!==''){
+             searchMovie()
+        }
     }
      });
      
+     
+     
+     
+
      //Informations on click carousel
+     $('img').click(function(){
+             var fileName=$(this).attr('alt');
+             movieCallAjaxDetail(fileName);
+         });
+     
+       // DETAILS MOVIE CAROUSEL
+      function movieCallAjaxDetail(fileName){
+          var title =fileName;
+        
+        $.ajax({
+            url: "http://www.omdbapi.com/?t="+title+"&y=&plot=short&r=json",
+            dataType : "jsonp",
+            success : detailsForMovie
+            });
+     }
+     
+     function detailsForMovie(responseGet){
+         console.log(responseGet);
+         addMoviesDetails(responseGet);
+     }
+     
+     function addMoviesDetails(responseGet){
+         var titleMovie = responseGet.Title,
+         releasedMovie= responseGet.Released,
+         plotMovie = responseGet.Plot,
+         PosterSrc= responseGet.Poster;
+        
+         //details to html
+         $('.movieTitle').html(titleMovie);
+         $('.relasedMovie').html(releasedMovie);
+         $('.plotMovie').html(plotMovie);
+         $('.imgMovie').attr("src",PosterSrc);
+     };
+    
+     $('.imgCarousel').click(function(){
+         $('.rowMovies').show();
+     });
      
 }); 
+
